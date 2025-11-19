@@ -39,24 +39,24 @@ monthlyincome = st.number_input("Monthly Income", min_value=1000, max_value=1000
 
 # Assemble input into DataFrame
 input_data = pd.DataFrame([{
-    'Age': age,
-    'TypeofContact': typeofcontact,
-    'CityTier': citytier,
-    'DurationOfPitch': durationofpitch,
-    'Occupation': occupation,
-    'Gender': gender,
-    'NumberOfPersonVisiting': numberofpersonvisiting,
-    'NumberOfFollowups': numberoffollowups,
-    'ProductPitched': productpitched,
-    'PreferredPropertyStar': preferredpropertystar,
-    'MaritalStatus': maritalstatus,
-    'NumberOfTrips': numberoftrips,
-    'Passport': passport,
-    'PitchSatisfactionScore': pitchsatisfactionscore,
-    'OwnCar': owncar,
-    'NumberOfChildrenVisiting': numberofchildrenvisiting,
-    'Designation': designation,
-    'MonthlyIncome': monthlyincome
+    'age': age,
+    'typeofcontact': typeofcontact,
+    'citytier': citytier,
+    'durationofpitch': durationofpitch,
+    'occupation': occupation,
+    'gender': gender,
+    'numberofpersonvisiting': numberofpersonvisiting,
+    'numberoffollowups': numberoffollowups,
+    'productpitched': productpitched,
+    'preferredpropertystar': preferredpropertystar,
+    'maritalstatus': maritalstatus,
+    'numberoftrips': numberoftrips,
+    'passport': passport,
+    'pitchsatisfactionscore': pitchsatisfactionscore,
+    'owncar': owncar,
+    'numberofchildrenvisiting': numberofchildrenvisiting,
+    'designation': designation,
+    'monthlyincome': monthlyincome
 }])
 
 # Set the classification threshold
