@@ -40,8 +40,7 @@ categorical_features = [
     'gender',
     'maritalstatus',
     'designation',
-    'productpitched',
-
+    'productpitched'
 ]
 
 # Define predictor matrix (X) using selected numeric and categorical features

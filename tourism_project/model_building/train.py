@@ -31,7 +31,7 @@ ytest = pd.read_csv(ytest_path)
 # List of numerical features in the dataset
 # Define features
 numeric_features = ['age','citytier','durationofpitch','numberofpersonvisiting','numberoffollowups','preferredpropertystar','numberoftrips','passport','pitchsatisfactionscore','owncar','numberofchildrenvisiting','monthlyincome']
-categorical_features = ['typeofcontact','occupation','gender','maritalstatus','designation','productpitched']
+categorical_features = ['typeofcontact','occupation','gender','productpitched','maritalstatus','designation']
 
 
 # Set the clas weight to handle class imbalance
