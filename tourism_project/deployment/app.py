@@ -66,5 +66,6 @@ classification_threshold = 0.45
 if st.button("Predict"):
     prediction_proba = model.predict_proba(input_data)[0, 1]
     prediction = (prediction_proba >= classification_threshold).astype(int)
-    result = "Taken" if prediction == 1 else "Not Taken"
-    st.write(f"Based on the information provided, the customer is likely to {result}.")
+    result = "Take the Tourism Package" if prediction == 1 else "Not Take the Tourism Package"
+    color = "#16a34a" if prediction == 1 else "#dc2626"   # modern green/red
+    st.write(f"Based on the information provided for Model Predictaion, the customer is likely to {result}.")
