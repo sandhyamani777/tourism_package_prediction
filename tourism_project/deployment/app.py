@@ -70,4 +70,29 @@ if st.button("Predict"):
     prediction_proba = model.predict_proba(input_data)[0, 1]
     prediction = (prediction_proba >= classification_threshold).astype(int)
     result = "Take the Tourism Package" if prediction == 1 else "Not to Take the Tourism Package"
-    st.write(f"Based on the information provided, the customer is likely to {result}.")
+    #st.write(f"Based on the information provided, the customer is likely to {result}.")
+if prediction == 1:
+    color = "#16a34a"
+    bg = "#ecfdf5"
+    emoji = "🌴✨"
+else:
+    color = "#dc2626"
+    bg = "#fef2f2"
+    emoji = "🚫🌴"
+
+st.markdown(
+    f"""
+    <div style="
+        padding:16px;
+        background:{bg};
+        border-radius:12px;
+        border:1px solid #e5e7eb;
+        font-size:17px;
+        font-family:'Segoe UI', sans-serif;
+    ">
+        <b>{emoji} Customer is likely to 
+        <span style='color:{color};'>{result}</span></b>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
