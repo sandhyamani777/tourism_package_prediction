@@ -62,9 +62,12 @@ input_data = pd.DataFrame([{
 # Set the classification threshold
 classification_threshold = 0.5
 
+from IPython.display import HTML, display
+
 # Predict button
 if st.button("Predict"):
     prediction_proba = model.predict_proba(input_data)[0, 1]
     prediction = (prediction_proba >= classification_threshold).astype(int)
     result = "Take the Tourism Package" if prediction == 1 else "Not Take the Tourism Package"
+    color = "green" if prediction == 1 else "red"
     st.write(f"Based on the information provided for Model Predictaion, the customer is likely to {result}.")
