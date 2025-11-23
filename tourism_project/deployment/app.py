@@ -11,7 +11,7 @@ model_path = hf_hub_download(
 model = joblib.load(model_path)
 
 # Streamlit UI for Insurance Charges Prediction
-st.title("🌴 Tourism Package Prediction App 🌴")
+st.title("🌴Tourism Package Prediction App🌴")
 st.write("Fill in the customer information below and click **Predict**.")
 
 # User input
@@ -71,28 +71,12 @@ if st.button("Predict"):
     prediction = (prediction_proba >= classification_threshold).astype(int)
     result = "Take the Tourism Package" if prediction == 1 else "Not to Take the Tourism Package"
     #st.write(f"Based on the information provided, the customer is likely to {result}.")
-if prediction == 1:
-    color = "#16a34a"
-    bg = "#ecfdf5"
-    emoji = "🌴✨"
-else:
-    color = "#dc2626"
-    bg = "#fef2f2"
-    emoji = "🚫🌴"
+    color = "#16a34a" if prediction == 1 else "#dc2626"   # nice green/red
 
 st.markdown(
     f"""
-    <div style="
-        padding:16px;
-        background:{bg};
-        border-radius:12px;
-        border:1px solid #e5e7eb;
-        font-size:17px;
-        font-family:'Segoe UI', sans-serif;
-    ">
-        <b>{emoji} Customer is likely to 
-        <span style='color:{color};'>{result}</span></b>
-    </div>
+    Based on the information provided, the customer is likely to
+    <b><span style='color:{color}; font-size:18px;'>{result}</span></b>.
     """,
     unsafe_allow_html=True
 )
